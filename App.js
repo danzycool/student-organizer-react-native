@@ -40,10 +40,11 @@ export default function App() {
       {displayedGoals.length < 1 && <Text style={styles.empty}>No Course Goal Set at the Moment...</Text>}
       <View style={styles.goalsContainer}>
         {displayedGoals.map((goal, index) => {
-          return
-          <View key={index} style={styles.goalItem}>
-            <Text> {`${index + 1}. ${goal}`}</Text>
-          </View>
+          return (
+            <View key={index} style={styles.goalItem}>
+              <Text style={styles.goalText}> {`${index + 1}. ${goal}`}</Text>
+            </View>
+          )
         })}
       </View>
     </View >
@@ -87,6 +88,9 @@ const styles = StyleSheet.create({
     padding: 8,
     borderRadius: 6,
     backgroundColor: '#5e0acc',
+    color: 'white'
+  },
+  goalText: {
     color: 'white'
   },
   empty: {
